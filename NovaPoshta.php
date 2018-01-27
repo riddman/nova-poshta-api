@@ -1,6 +1,6 @@
 <?php
 
-namespace Helpers;
+namespace Riddman\NovaPoshtaApi
 
 define('NOVA_POSHTA_APIKEY', '785bf3c3e8c8e453fee24fb02fbab3cb');
 
