@@ -1,26 +1,12 @@
 <?php
 
-namespace Riddman\NovaPoshtaApi
+namespace Riddman\NovaPoshtaApi;
 
 define('NOVA_POSHTA_APIKEY', '785bf3c3e8c8e453fee24fb02fbab3cb');
 
 class NovaPoshta
 {
     protected static $url = 'https://api.novaposhta.ua/v2.0/json/';
-
-    protected static $citiesData = array(
-        'modelName'        => 'Address',
-        'calledMethod'     => 'getCities',
-        //'methodProperties' => array(),
-        'apiKey'           => NOVA_POSHTA_APIKEY
-    );
-
-    protected static $departmentsData = array(
-        'modelName'        => 'AddressGeneral',
-        'calledMethod'     => 'getWarehouses',
-        //'methodProperties' => array(),
-        'apiKey'           => NOVA_POSHTA_APIKEY
-    );
 
     protected static function query($url, $data)
     {
@@ -40,13 +26,27 @@ class NovaPoshta
         return (empty($result['data'])) ? false : $result['data'];
     }
 
-    public static function getCities()
+    public static function getCities($novaPoshtaApiKey)
     {
-        return self::query(self::$url, self::$citiesData);
+        $citiesData = array(
+            'modelName'        => 'Address',
+            'calledMethod'     => 'getCities',
+            //'methodProperties' => array(),
+            'apiKey'           => $novaPoshtaApiKey
+        );
+
+        return self::query(self::$url, $citiesData);
     }
 
-    public static function getDepartments()
+    public static function getDepartments($novaPoshtaApiKey)
     {
-        return self::query(self::$url, self::$departmentsData);
+        $departmentsData = array(
+            'modelName'        => 'AddressGeneral',
+            'calledMethod'     => 'getWarehouses',
+            //'methodProperties' => array(),
+            'apiKey'           => $novaPoshtaApiKey
+        );
+
+        return self::query(self::$url, $departmentsData);
     }
 }
