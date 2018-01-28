@@ -5,6 +5,9 @@ Usage
 
 in your controller
 
+<?php
+...
+
 use Riddman\NovaPoshtaApi\NovaPoshta;
 
 ...
