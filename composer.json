@@ -1,7 +1,6 @@
 {
     "name": "riddman/nova-poshta-api",
     "description": "A simple library for working with API 2.0 of Nova Poshta",
-    "version": "1.0.0",
     "authors": [
         {
             "name": "Oleksandr Polishchuk",
